@@ -1,7 +1,7 @@
 import {Link, Head} from '@inertiajs/react';
 import {PageProps} from '@/types';
 
-export default function Welcome({auth}: PageProps<{}>) {
+export default function Welcome({auth, canLogin, canRegister}: PageProps<{ canLogin: boolean, canRegister: boolean }>) {
     return (
         <>
             <Head title="Welcome"/>
@@ -17,19 +17,18 @@ export default function Welcome({auth}: PageProps<{}>) {
                         </Link>
                     ) : (
                         <>
-                            <Link
+                            {canLogin && <Link
                                 href={route('login')}
                                 className="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
                             >
                                 Log in
-                            </Link>
-
-                            <Link
+                            </Link>}
+                            {canRegister && <Link
                                 href={route('register')}
                                 className="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
                             >
                                 Register
-                            </Link>
+                            </Link>}
                         </>
                     )}
                 </div>
@@ -55,13 +54,11 @@ export default function Welcome({auth}: PageProps<{}>) {
                             >
                                 <div>
                                     <h2 className="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
-                                        Documentation
+                                        Welcome to Veros
                                     </h2>
 
                                     <p className="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                        Laravel has wonderful documentation covering every aspect of the framework.
-                                        Whether you are a newcomer or have prior experience with Laravel, we recommend
-                                        reading our documentation from beginning to end.
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam placerat, felis id mollis pharetra, lacus tellus dignissim mauris, nec egestas arcu nibh lacinia diam. Duis tincidunt lacinia augue sed vulputate. Integer dapibus dictum porttitor. Duis vel venenatis leo. Morbi ut velit volutpat, pharetra mauris non, sagittis lorem. Curabitur mollis sed nunc non efficitur. Sed ut nisl sit amet quam hendrerit fringilla. Maecenas risus quam, placerat et pharetra sed, iaculis non lectus.
                                     </p>
                                 </div>
                             </div>
