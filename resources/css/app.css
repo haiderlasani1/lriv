@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.cls-2 {
+    fill: url(#Degradado_sin_nombre_27);
+}
