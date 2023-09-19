@@ -1,6 +1,9 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import {Head} from '@inertiajs/react';
 import {PageProps} from '@/types';
+import PrimaryButton from "@/Components/PrimaryButton";
+import SecondaryButton from "@/Components/SecondaryButton";
+import TextInput from "@/Components/TextInput";
 
 export default function Dashboard({auth}: PageProps) {
     return (
@@ -10,10 +13,23 @@ export default function Dashboard({auth}: PageProps) {
         >
             <Head title="Mapping"/>
 
-            <div className="py-12">
+            <div className="py-4">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                        <div className="p-6 text-gray-900 dark:text-gray-100">Welcome to the Mapping</div>
+                        <div className="p-4 text-gray-900 dark:text-gray-100 flex justify-between">
+                            <div>
+                                <PrimaryButton>Add Template</PrimaryButton>
+                            </div>
+                            <div className="flex">
+                                <SecondaryButton className="mr-2">Invoice Template</SecondaryButton>
+                                <SecondaryButton>Declaration Template</SecondaryButton>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg mt-4">
+                        <div className="p-4 text-gray-900 dark:text-gray-100 flex justify-between">
+                            <TextInput className="w-full" placeholder="Search" />
+                        </div>
                     </div>
                 </div>
             </div>
